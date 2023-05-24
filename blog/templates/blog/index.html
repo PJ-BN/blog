@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+My blog
+{% endblock%}
+
+{% block css_file %}
+
+<link rel="stylesheet" href="{% static 'blog/post.css' %}" />
+    <link rel="stylesheet" href="{% static 'blog/index.css' %}" />
+
+{% endblock%}
+
+{% block content%}
+
+    
+    <section id = "welcome">
+        <header>
+            <img src="{% static "blog/images/luffy.jpg" %}" alt = "Prajwal"/>
+            <h2>Prajwal's Blog</h2>
+        </header>
+        <p>Hi, I'm Prajwal Bhandari and I love to code and write blog about it</p>
+    </section>
+
+    <section id = "latest-posts">
+        <h2>My Latest Blog</h2>
+
+        <ul>
+            {% for post in posts%}
+           {% include "blog/include/post.html" %}
+           {% endfor%}
+        </ul>
+
+    </section>
+
+    <section id = "about">
+        <h2>What I do</h2>
+        <p>I love programming, I love to help others and I enjoy exploring new technologies in general!</p>
+        <p>My goal is to keep on growing as a developer - and if I could help you do the same , I'd be very happy! </p>
+    </section>
+
+{% endblock%}
