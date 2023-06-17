@@ -16,11 +16,11 @@ This post Title
 {% block content%}
 
     <section id = "summary"> 
-        <h2> Post Title </h2>
+        <h2> {{post.title}} </h2>
         
         <article>
             <img src = "" alt = "{{post.title}}" />
-            <address> {{post.autohr}} </address>
+            <address> By {{post.author}} </address>
             <div>
                 Last updated on <time> {{post.date}} </time>
             </div>
